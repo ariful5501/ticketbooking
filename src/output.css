@@ -1222,4 +1222,8 @@ video {
   .lg\:pl-4 {
     padding-left: 1rem;
   }
+
+  .lg\:pl-8 {
+    padding-left: 2rem;
+  }
 }
