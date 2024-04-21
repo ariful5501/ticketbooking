@@ -96,6 +96,7 @@
                                 <div class="pl-2 lg:pl-8 text-gray-600 overflow-hidden ">GOING FROM</div>
                                 <div class="pl-2 lg:pl-8 overflow-hidden">
                                     <input type="text"          list="programmingLanguages"
+                                    id="fromInput"
                                     placeholder="Search by city"
                                     class="bg-transparent outline-none"
                                     />
@@ -108,7 +109,7 @@
 
                                 </div>
                             </div>
-                                <button class="text-[12px] text-red-400 w-[15px] lg:w-[30px] min-h-[16px] lg:min-h-[32px] grid place-content-center border border-red-500 rounded-full bg-white absolute top-[30%] lg:top-[20%] -right-[8px] lg:-right-[16px]">
+                                <button id="swapButton" class="text-[12px] text-red-400 w-[15px] lg:w-[30px] min-h-[16px] lg:min-h-[32px] grid place-content-center border border-red-500 rounded-full bg-white absolute top-[30%] lg:top-[20%] -right-[8px] lg:-right-[16px]">
                                     <img src="./assets/Vector.png" alt="" class="p-2">
                                 </button>
                         </div>
@@ -116,6 +117,7 @@
                             <div class="pl-2 lg:pl-8 text-gray-600 overflow-hidden">GOING TO</div>
                             <div class="pl-2 lg:pl-8 overflow-hidden">
                                 <input type="text"          list="programmingLanguages"
+                                id="toInput"
                                 placeholder="Search by city" 
                                 class="bg-transparent outline-none"
                                 />
@@ -212,5 +214,21 @@
             </div>
         </div>
     </section>
+    <script>
+        // Get references to the input fields and the swap button
+        const fromInput = document.querySelector('#fromInput');
+        const toInput = document.querySelector('#toInput');
+        const swapButton = document.querySelector('#swapButton');
+  
+        // Add event listener to the swap button
+        swapButton.addEventListener('click', () => {
+        
+        // Swap the values of the input fields
+        const temp = fromInput.value;
+        fromInput.value = toInput.value;
+        toInput.value = temp;
+        });
+  
+    </script>
 </body>
 </html>
