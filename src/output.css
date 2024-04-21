@@ -625,6 +625,10 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-\[50px\] {
   height: 50px;
 }
@@ -901,6 +905,22 @@ video {
   padding-right: 1.25rem;
 }
 
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pt-9 {
+  padding-top: 2.25rem;
+}
+
+.pt-96 {
+  padding-top: 24rem;
+}
+
 .text-\[12px\] {
   font-size: 12px;
 }
@@ -959,6 +979,10 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:flex {
+    display: flex;
+  }
+
   .lg\:min-w-\[800px\] {
     min-width: 800px;
   }
