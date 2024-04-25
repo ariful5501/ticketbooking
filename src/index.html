@@ -571,7 +571,7 @@
     <section>
       <!-- footer -->
     </section>
-    <script>
+    <!-- <script>
       function loadData() {
         // Show loader
         document.getElementById("loader").style.display = "block";
@@ -602,6 +602,17 @@
         fromInput.value = toInput.value;
         toInput.value = temp;
       });
+    </script> -->
+    
+    <script>
+      function myfunc(){
+        temp=''
+        for (let i in data ){
+          temp=`<option value=${data.i}>
+             </option>`
+        }
+        document.getElementById.inner=temp
+      }
     </script>
   </body>
 </html>
