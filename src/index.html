@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/logo-new.png" type="image/css" />
     <link href="./output.css" rel="stylesheet" />
-    <title>bdtickets | Bus Ticket Booking</title>
+    <link
+      rel="shortcut icon"
+      href="https://bdtickets.com/fav-icon-new.png"
+      type="image/x-icon"
+    />
+    <title>bdtickets clone | Bus Ticket Booking</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="./assets/logo-new-2.png" type="image/css" />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -272,7 +278,7 @@
       <div
         class="w-full min-h-[70vh] bg-[url(https://bdtickets.com/images/banner/banner-web.png)] bg-cover bg-center bg-no-repeat grid place-content-center absolute top-0"
       >
-        <div class="min-w-[320px] lg:min-w-[1100px] pt-32 pb-16 -pr-2">
+        <div class="min-w-[320px] lg:min-w-[800px] pt-32 pb-16 -pr-2">
           <div
             class="w-[74%] min-h-10 bg-white rounded-xl rounded-b-none mx-auto p-4"
           >
@@ -440,14 +446,14 @@
                       <input
                         type="text"
                         list="programmingLanguages"
-                        id="fromInput"
+                        id="location1"
                         placeholder="Search by city"
                         class="bg-transparent outline-none"
                       />
                       <datalist id="programmingLanguages">
                         <option value="Dhaka">Dhaka</option>
-                        <option value="Chittagong">Chittagong</option>
-                        <option value="Barisal">Barisal</option>
+                        <option value="Chattogram">Chattogram</option>
+                        <option value="Barishal">Barishal</option>
                         <option value="Rajshahi">Rajshahi</option>
                         <option value="Chapainawabganj">Chapainawabganj</option>
                       </datalist>
@@ -468,14 +474,14 @@
                     <input
                       type="text"
                       list="programmingLanguages"
-                      id="toInput"
+                      id="location2"
                       placeholder="Search by city"
                       class="bg-transparent outline-none"
                     />
                     <datalist id="programmingLanguages">
                       <option value="Dhaka">Dhaka</option>
-                      <option value="Chittagong">Chittagong</option>
-                      <option value="Barisal">Barisal</option>
+                      <option value="Chattogram">Chattogram</option>
+                      <option value="Barishal">Barishal</option>
                       <option value="Rajshahi">Rajshahi</option>
                       <option value="Chapainawabganj">Chapainawabganj</option>
                     </datalist>
@@ -494,7 +500,7 @@
                   <div class="pl-2 lg:pl-8 overflow-hidden">
                     <input
                       type="date"
-                      id="input3"
+                      id="date"
                       name="date"
                       class="border rounded bg-transparent outline-none border-hidden"
                     />
@@ -517,35 +523,50 @@
             </div>
             <div class="py-0 lg:py-6 hidden lg:flex">
               <span class="mx-0 lg:mx-2">Trending Searches:</span>
-              <button class="border-2 rounded-lg px-2 mx-0 lg:mx-1 bg-gray-200">
-                <span class="flex items-center">
-                  Dhaka
-                  <span class="material-symbols-outlined"> arrow_forward</span>
-                  Rajshahi
-                </span>
-              </button>
-              <button class="border-2 rounded-lg px-2 mx-0 lg:mx-2 bg-gray-200">
+              <button
+                onclick="setData()"
+                class="border-2 rounded-lg px-2 mx-0 lg:mx-1 bg-gray-200"
+              >
                 <span class="flex items-center">
                   Dhaka
                   <span class="material-symbols-outlined"> arrow_forward </span>
-                  Barisal
+                  Rajshahi
                 </span>
               </button>
-              <button class="border-2 rounded-lg px-2 mx-0 lg:mx-1 bg-gray-200">
+              <button
+                onclick="setData2()"
+                class="border-2 rounded-lg px-2 mx-0 lg:mx-1 bg-gray-200"
+              >
+                <span class="flex items-center">
+                  Dhaka
+                  <span class="material-symbols-outlined"> arrow_forward </span>
+                  Barishal
+                </span>
+              </button>
+              <button
+                onclick="setData3()"
+                class="border-2 rounded-lg px-2 mx-0 lg:mx-1 bg-gray-200"
+              >
                 <span class="flex items-center">
                   Dhaka
                   <span class="material-symbols-outlined"> arrow_forward </span>
                   Coxs-Bazar
                 </span>
               </button>
-              <button class="border-2 rounded-lg px-2 mx-0 lg:mx-1 bg-gray-200">
+              <button
+                onclick="setData4()"
+                class="border-2 rounded-lg px-2 mx-0 lg:mx-1 bg-gray-200"
+              >
                 <span class="flex items-center">
                   Dhaka
                   <span class="material-symbols-outlined"> arrow_forward </span>
-                  Chittagong
+                  Chattogram
                 </span>
               </button>
-              <button class="border-2 rounded-lg px-2 mx-0 lg:mx-1 bg-gray-200">
+              <button
+                onclick="setData5()"
+                class="border-2 rounded-lg px-2 mx-0 lg:mx-1 bg-gray-200"
+              >
                 <span class="flex items-center">
                   Dhaka
                   <span class="material-symbols-outlined"> arrow_forward </span>
@@ -555,8 +576,8 @@
             </div>
             <div class="w-full min-h-7 flex justify-center">
               <button
-                id="submitButton"
-                class="bg-red-600 text-white py-2 px-12 rounded-md translate-y-8 font-bold hover:bg-red-500"
+                onclick="searchData()"
+                class="bg-red-600 text-white py-2 px-12 rounded-md translate-y-11 font-bold hover:bg-red-500"
               >
                 Search Bus
               </button>
@@ -566,42 +587,77 @@
       </div>
     </section>
 
-    <section id="resultshow">
-      <div style="margin-top: 72vh">
-        <!-- <button id="loadButton" onclick="loadData()">Load Data</button> -->
-        <div id="loader" class="loader" style="display: none"></div>
-        <div id="result" style="display: none"></div>
+    <!-- <div class="flex gap-5 bg-white p-4">
+    <div>
+    <p>SHYAMOLI NR TRAVELS</p>
+    <p>2901-DIN-FUL-DHK Non AC</p>
+    <p>Starting Point: <span>Dinajpur 01 No</span></p>
+    <p>End Point: <span>Technical</span></p>
+    </div>
 
-        <center>
-          <div
-            id="output"
-            class="text-2xl w-[400px] font-bold text-[#000000] gap-2"
-          ></div>
-        </center>
+    <div>
+        <p>DEPARTURE TIME</p>
+        <p>7:30 AM</p>
+    </div>
+
+    <div>
+        <p>ARRIVAL TIME</p>
+        <p>1:31 PM</p>
+    </div>
+
+    <div>
+        <p>SEATS AVAILABLE</p>
+        <p>16</p>
+    </div>
+
+    <div>
+        <p>৳900.00</p>
+    </div>
+
+    <div>
+        <button><a href="https://github.com/MokhlesBappy">VIEW SEATS</a></button>
+        <p><a href="https://github.com/MokhlesBappy">Cancellation Policy</a></p>
+    </div>
+</div> -->
+
+    <section id="resultshow">
+      <div
+        class="justify-center grid"
+        style="margin-top: 72vh; list-style-type: none"
+      >
+        <!-- <button id="loadButton" onclick="loadData()">Load Data</button> -->
+        <!-- <div id="loader" class="loader" style="display:none;"></div>
+        <div id="result" style="display:none;"></div> -->
+
+        <div id="loader" class="loader"></div>
+        <div id="searchResult" class="result text-[#666] font-bold"></div>
+        <a href="http://" target="_blank" rel="noopener noreferrer"></a>
+
+        <!-- <center><div id="output" class="text-2xl w-[400px] font-bold text-[#CA8787] gap-2"></div></center> -->
       </div>
     </section>
 
     <!-- <script>
-    function loadData() {
-    // Show loader
-    document.getElementById("loader").style.display = "block";
-    
-    // Simulate some processing time (replace this with your actual code)
-    setTimeout(function() {
-      // Hide loader
-      document.getElementById("loader").style.display = "none";
-      
-      // Display result
-      document.getElementById("result").style.display = "block";
-      document.getElementById("result").innerText = `Ticket data loaded successfully! Date: 22/04/2024 Dhaka to Chittagong Hanif AC Price tk- 2000 Time 6:30 am`;
-    }, 2000); // Simulating 2 seconds of processing time
-  }
+          function loadData() {
+          // Show loader
+          document.getElementById("loader").style.display = "block";
+          
+          // Simulate some processing time (replace this with your actual code)
+          setTimeout(function() {
+            // Hide loader
+            document.getElementById("loader").style.display = "none";
+            
+            // Display result
+            document.getElementById("result").style.display = "block";
+            document.getElementById("result").innerText = `Ticket data loaded successfully! Date: 22/04/2024 Dhaka to Chattogram Hanif AC Price tk- 2000 Time 6:30 am`;
+          }, 2000); // Simulating 2 seconds of processing time
+        }
 </script> -->
 
     <script>
       // Get references to the input fields and the swap button
-      const fromInput = document.querySelector("#fromInput");
-      const toInput = document.querySelector("#toInput");
+      const fromInput = document.querySelector("#location1");
+      const toInput = document.querySelector("#location2");
       const swapButton = document.querySelector("#swapButton");
 
       // Add event listener to the swap button
@@ -628,40 +684,682 @@
       //   <p>Date: ${date}</p>
       // `;
 
-      document
-        .getElementById("submitButton")
-        .addEventListener("click", function () {
-          // Show loader
-          document.getElementById("loader").style.display = "block";
+      //     document.getElementById("submitButton").addEventListener("click", function() {
+      //   // Show loader
+      //   document.getElementById("loader").style.display = "block";
 
-          // Simulate a delay (2 seconds) for processing
-          setTimeout(function () {
-            // Hide loader
-            document.getElementById("loader").style.display = "none";
+      //   // Simulate a delay (2 seconds) for processing
+      //   setTimeout(function() {
+      //     // Hide loader
+      //     document.getElementById("loader").style.display = "none";
 
-            // Get values from input fields
-            var from = document.getElementById("fromInput").value;
-            var to = document.getElementById("toInput").value;
-            var date = document.getElementById("input3").value;
+      //     // Get values from input fields
+      //     var from = document.getElementById("fromInput").value;
+      //     var to = document.getElementById("toInput").value;
+      //     var date = document.getElementById("input3").value;
 
-            // Display selected values
-            document.getElementById("output").innerHTML = `
-<p>From: ${from}</p>
-<p>To: ${to}</p>
-<p>Date: ${date}</p>
-`;
+      //     // Display selected values
+      //     document.getElementById("output").innerHTML = `
+      //       <p>From: ${from}</p>
+      //       <p>To: ${to}</p>
+      //       <p>Date: ${date}</p>
+      //     `;
 
-            // Show output
-            document.getElementById("output").classList.remove("hidden");
-          }, 2000);
+      //     // Show output
+      //     document.getElementById("output").classList.remove("hidden");
+      //   }, 2000);
+      // });
+
+      // Simulated database
+      var database = [
+        {
+          key: "DhakaBarishal20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+            <div>
+              <p class="text-red-600">SHYAMOLI NR TRAVELS</p>
+              <p class="text-sm">2901-DIN-FUL-DHK Non AC</p>
+              <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+              <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+            </div>
+
+            <div>
+              <p class="text-sm">DEPARTURE TIME</p>
+              <p class="text-red-600">7:30 AM</p>
+            </div>
+
+            <div>
+              <p class="text-sm">ARRIVAL TIME</p>
+              <p class="text-red-600">1:31 PM</p>
+            </div>
+
+            <div>
+              <p class="text-sm">SEATS AVAILABLE</p>
+              <p class="text-red-600">16</p>
+            </div>
+
+            <div>
+              <p class="text-red-600 text-2xl">৳900.00</p>
+            </div>
+
+            <div class="grid">
+              <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+              <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+            </div>
+</div>`,
+        },
+        {
+          key: "DhakaBarishal20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">SHYAMOLI NR TRAVELS</p>
+    <p class="text-sm">2901-DIN-FUL-DHK AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">9:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">3:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+        {
+          key: "DhakaBarishal20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">AHAD ENTERPRISE</p>
+    <p class="text-sm">2901-DIN-FUL-DHK Non AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">7:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">1:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+        {
+          key: "DhakaBarishal20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">AHAD ENTERPRISE</p>
+    <p class="text-sm">2901-DIN-FUL-DHK AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">9:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">3:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+
+        {
+          key: "DhakaChattogram20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">SHYAMOLI NR TRAVELS</p>
+    <p class="text-sm">2901-DIN-FUL-DHK Non AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">7:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">1:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+        {
+          key: "DhakaChattogram20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">SHYAMOLI NR TRAVELS</p>
+    <p class="text-sm">2901-DIN-FUL-DHK AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">9:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">3:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+        {
+          key: "DhakaChattogram20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">AHAD ENTERPRISE</p>
+    <p class="text-sm">2901-DIN-FUL-DHK Non AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">7:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">1:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+        {
+          key: "DhakaChattogram20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">AHAD ENTERPRISE</p>
+    <p class="text-sm">2901-DIN-FUL-DHK AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">9:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">3:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+
+        {
+          key: "RajshahiBarishal20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">SHYAMOLI NR TRAVELS</p>
+    <p class="text-sm">2901-DIN-FUL-DHK Non AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">7:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">1:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+        {
+          key: "RajshahiBarishal20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">SHYAMOLI NR TRAVELS</p>
+    <p class="text-sm">2901-DIN-FUL-DHK AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">9:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">3:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+        {
+          key: "RajshahiBarishal20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">AHAD ENTERPRISE</p>
+    <p class="text-sm">2901-DIN-FUL-DHK Non AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">7:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">1:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+        {
+          key: "RajshahiBarishal20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">AHAD ENTERPRISE</p>
+    <p class="text-sm">2901-DIN-FUL-DHK AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">9:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">3:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+
+        {
+          key: "RajshahiChattogram20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">SHYAMOLI NR TRAVELS</p>
+    <p class="text-sm">2901-DIN-FUL-DHK Non AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">7:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">1:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+        {
+          key: "RajshahiChattogram20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">SHYAMOLI NR TRAVELS</p>
+    <p class="text-sm">2901-DIN-FUL-DHK AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">9:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">3:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+        {
+          key: "RajshahiChattogram20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">AHAD ENTERPRISE</p>
+    <p class="text-sm">2901-DIN-FUL-DHK Non AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">7:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">1:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+        {
+          key: "RajshahiChattogram20240503",
+          data: `<div class="flex gap-7 bg-white p-6 rounded-lg mb-3">
+    <div>
+    <p class="text-red-600">AHAD ENTERPRISE</p>
+    <p class="text-sm">2901-DIN-FUL-DHK AC</p>
+    <p class="text-sm">Starting Point: <span class="text-red-600">Dinajpur 01 No</span></p>
+    <p class="text-sm">End Point: <span class="text-red-600">Technical</span></p>
+    </div>
+
+    <div>
+        <p class="text-sm">DEPARTURE TIME</p>
+        <p class="text-red-600">9:30 AM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">ARRIVAL TIME</p>
+        <p class="text-red-600">3:31 PM</p>
+    </div>
+
+    <div>
+        <p class="text-sm">SEATS AVAILABLE</p>
+        <p class="text-red-600">16</p>
+    </div>
+
+    <div>
+        <p class="text-red-600 text-2xl">৳900.00</p>
+    </div>
+
+    <div class="grid">
+        <button class="bg-red-600 text-white rounded-md hover:bg-red-500"><a href="https://github.com/MokhlesBappy" target="_blank">VIEW SEATS</a></button>
+        <p class="text-red-600 text-xs"><a href="https://github.com/MokhlesBappy" target="_blank">Cancellation Policy</a></p>
+    </div>
+</div>`,
+        },
+      ];
+
+      function searchData() {
+        var location1 = document.getElementById("location1").value;
+        var location2 = document.getElementById("location2").value;
+        var date = document.getElementById("date").value;
+
+        var searchData = location1 + location2 + date.replaceAll("-", "");
+
+        var loader = document.getElementById("loader");
+        var searchResult = document.getElementById("searchResult");
+
+        loader.style.display = "block";
+        searchResult.style.display = "none";
+
+        setTimeout(function () {
+          loader.style.display = "none";
+          var resultData = searchDataInDatabase(searchData);
+          if (resultData.length > 0) {
+            searchResult.innerHTML = `<h3>Available Buses for ${location1} to ${location2} on ${date} </h3><ul>`;
+            resultData.forEach(function (item) {
+              searchResult.innerHTML += "<li>" + item + "</li>";
+            });
+            searchResult.innerHTML += "</ul>";
+          } else {
+            searchResult.innerHTML =
+              "Data not found for " +
+              `${location1} to ${location2} on ${date} `;
+          }
+          searchResult.style.display = "block";
+        }, 2000); // Showing loader for 2 seconds before displaying the search result
+      }
+
+      // Function to search data in the database
+      function searchDataInDatabase(searchData) {
+        var matchingData = [];
+        database.forEach(function (entry) {
+          if (entry.key.includes(searchData)) {
+            matchingData.push(entry.data);
+          }
         });
+        return matchingData;
+      }
 
-      document.getElementById("input3").min = new Date()
+      document.getElementById("date").min = new Date()
         .toISOString()
         .split("T")[0];
       document.getElementById("input4").min = new Date()
         .toISOString()
         .split("T")[0];
+
+      var data = ["Dhaka", "Rajshahi"]; // Your data array
+
+      function setData() {
+        document.getElementById("location1").value = data[0];
+        document.getElementById("location2").value = data[1];
+      }
+
+      var data2 = ["Dhaka", "Barishal"]; // Your data array
+
+      function setData2() {
+        document.getElementById("location1").value = data2[0];
+        document.getElementById("location2").value = data2[1];
+      }
+
+      var data3 = ["Dhaka", "Coxs-Bazar"]; // Your data array
+
+      function setData3() {
+        document.getElementById("location1").value = data3[0];
+        document.getElementById("location2").value = data3[1];
+      }
+
+      var data4 = ["Dhaka", "Chattogram"]; // Your data array
+
+      function setData4() {
+        document.getElementById("location1").value = data4[0];
+        document.getElementById("location2").value = data4[1];
+      }
+
+      var data5 = ["Dhaka", "Chapainawabganj"]; // Your data array
+
+      function setData5() {
+        document.getElementById("location1").value = data5[0];
+        document.getElementById("location2").value = data5[1];
+      }
     </script>
   </body>
 </html>
